@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 
 {% block title %}
-    Register Page
+    Login Page
 {% endblock %}
 
-{% block active_register %}
+{% block active_login %}
     active
 {% endblock %}
 
@@ -18,7 +18,7 @@
                     <div class="card-body p-md-5">
                         <div class="row justify-content-center">
                             <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
-                                <p class="text-center h1 fw-bold mb-4 mx-1 mx-md-4">Sign up</p>
+                                <p class="text-center h1 fw-bold mb-4 mx-1 mx-md-4 mt-4">Sign In</p>
                                 <form method="POST" class="mx-1 mx-md-4">
                                     {{ form.hidden_tag() }}
                                     <div class="form-group">
@@ -32,32 +32,16 @@
                                     <div class="form-group">
                                         <div class="input-group">
                                             <div class="input-group-prepend">
-                                                <span class="input-group-text"><i class="fas fa-envelope fa-lg fa-fw"></i></span>
-                                            </div>
-                                            {{ form.email_address(class="form-control", placeholder="Email Address") }}
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
                                                 <span class="input-group-text"><i class="fas fa-lock fa-lg fa-fw"></i></span>
                                             </div>
-                                            {{ form.password1(class="form-control", placeholder="Password") }}
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text"><i class="fas fa-key fa-lg fa-fw"></i></span>
-                                            </div>
-                                            {{ form.password2(class="form-control", placeholder="Confirm Password") }}
+                                            {{ form.password(class="form-control", placeholder="Password") }}
                                         </div>
                                     </div>
                                     <div class="d-flex justify-content-center mx-4 mb-lg-4 mt-4">
                                         {{ form.submit(class="btn btn-primary btn-lg") }}
                                     </div>
                                     <div class="text-center">
-                                        <p class="mb-0">Already have an account? <a href="{{ url_for('login_page') }}" class="text-white-50 fw-bold">Sign In</a>
+                                        <p class="mb-0">Don't have an account? <a href="{{ url_for('register_page') }}" class="text-white-50 fw-bold">Sign Up</a>
                                     </div>
                                 </form>
                             </div>
